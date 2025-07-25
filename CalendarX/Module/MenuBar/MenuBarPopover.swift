@@ -21,6 +21,7 @@ class MenubarPopover: NSPopover {
 
         self.router = router
         super.init()
+        self.animates = false
         contentViewController = NSHostingController(rootView: rootScreen)
         contentSize = .init(width: .mainWidth, height: .mainHeight)
         shouldHideAnchor()
