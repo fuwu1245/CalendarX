@@ -89,14 +89,14 @@ extension AppDate {
         let tIndex = (lunarYear - 1) % tiangan.count
         let dIndex = (lunarYear - 1) % dizhi.count
 
-        return tiangan[tIndex] + dizhi[dIndex] + shengxiao[sIndex] + "年 " + (isLeapMonth ? "[润]" : "")
+        return tiangan[tIndex] + dizhi[dIndex] + shengxiao[sIndex] + "年 " + (isLeapMonth ? "[闰]" : "")
             + lunarMonthString + lunarDayString
     }
 
     private var lunarMonthString: String { Lunar.months[lunarMonth - 1] }
     private var lunarDayString: String { Lunar.days[lunarDay - 1] }
 
-    private var lunarMonthTitle: String { (isLeapMonth ? "润" : "") + lunarMonthString }
+    private var lunarMonthTitle: String { (isLeapMonth ? "闰" : "") + lunarMonthString }
 
     var lunarDayTitle: String { lunarDay == 1 ? lunarMonthTitle : lunarDayString }
     var sYKey: String { year.description }
